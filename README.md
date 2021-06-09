@@ -135,3 +135,21 @@ namespace Sqlapp.Controllers
         </tbody>
     </table>
 </div>
+
+# Startup
+ public void ConfigureServices(IServiceCollection services)
+        {
+            // Ensure to add the services
+            services.AddMvc();
+            services.AddTransient<CourseService>();
+        }
+                           
+                            app.UseRouting();
+
+            // Ensure to map the controllers accordingly
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Course}/{action=Index}/{id?}");
+            });
