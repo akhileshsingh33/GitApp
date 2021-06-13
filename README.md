@@ -1,6 +1,9 @@
 # GitApp
 XLab-MHJ-129@xtremelabs.us
 ppQ3cLEK
+
+Server=tcp:dbserverakhi1234.database.windows.net,1433;Initial Catalog=appdb;Persist Security Info=False;User ID=demousr;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
 #Course
 using System;
 using System.Collections.Generic;
