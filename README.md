@@ -48,7 +48,7 @@ namespace CourseDBFunction
             // We then use the JsonConvert class to convert the string of the request body to a Course object
             Course data = JsonConvert.DeserializeObject<Course>(requestBody);
 
-            string _connection_string = "Server=tcp:dbserver10001.database.windows.net,1433;Initial Catalog=appdb;Persist Security Info=False;User ID=demousr;Password=Azure@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            string _connection_string = Environment.GetEnvironmentVariable("SQLAZURECONNSTR_SQLConnectionString");
             string _statement = "INSERT INTO Course(CourseID,CourseName,rating) VALUES(@param1,@param2,@param3)";
             SqlConnection _connection = new SqlConnection(_connection_string);
             _connection.Open();
